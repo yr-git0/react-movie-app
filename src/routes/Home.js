@@ -20,14 +20,7 @@ function Home() {
   };
 
   useEffect(() => {
-    fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        setMovies(json.data.movies);
-        setLoading(false);
-      });
+    getMovies();
   }, []);
   console.log(movies);
   return (
